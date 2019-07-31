@@ -88,7 +88,7 @@ class Register extends Component {
 									id="password"
 									type="password"
 								/>
-								<label htmlFor="password">Password (Between 4 - 30 Characters)</label>
+								<label htmlFor="password">Password (Between 6 - 30 Characters)</label>
 							</div>
 							<div>{this.state.errors.password}</div>
 							<div className="input-field col s12">
