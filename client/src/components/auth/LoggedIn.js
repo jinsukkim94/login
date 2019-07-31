@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 
 export default class LoggedIn extends Component {
 	logOut() {
@@ -11,7 +10,7 @@ export default class LoggedIn extends Component {
 			<div className="container">
 				<div style={{ marginTop: '4rem' }} className="row">
 					<div className="col s8 offset-s2">
-						<div> Hello!</div>
+						<div> Hello, !</div>
 						<button
 							style={{
 								width: '150px',
