@@ -8,13 +8,9 @@ export default class LoggedIn extends Component {
 			username: ''
 		}
 	}
-	fetchUser() {
+	fetchCurr() {
 		this.fetchUser().then((res) => {
-			if(res.message) {
-				this.setState({
-					username: res
-				})
-			}
+			return <div> Hello, {this.state.username}!</div>
 		})
 	}
 	logOut() {
@@ -22,12 +18,11 @@ export default class LoggedIn extends Component {
 	}
 
 	render() {
-		this.fetchUser(); 
 		return (
 			<div className="container">
 				<div style={{ marginTop: '4rem' }} className="row">
 					<div className="col s8 offset-s2">
-						<div> Hello, {this.state.username}!</div>
+						{this.fetchCurr()}
 						<button
 							style={{
 								width: '150px',
