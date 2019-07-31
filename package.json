@@ -9,7 +9,8 @@
 		"client-install": "npm install --prefix client",
 		"client": "npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"start": "node server.js",
+		"start": "npm install && node server.js",
+		"heroku-postbuild": "cd client && npm install && npm run build",
 		"prod": "NODE_ENV=production node server.js"
 	},
 	"author": "jinsuk kim",
