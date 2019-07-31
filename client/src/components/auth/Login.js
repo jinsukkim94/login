@@ -29,7 +29,7 @@ class Login extends Component {
 				console.log(resp);
 				this.props.history.push({
 					pathname: '/loggedin',
-					state: {email: this.state.email},
+					state: { email: this.state.email },
 				});
 				this.setState({
 					email: '',
@@ -38,6 +38,7 @@ class Login extends Component {
 				});
 			})
 			.catch(error => {
+				console.log(error);
 				this.setState({
 					errors: error,
 				});
@@ -71,6 +72,7 @@ class Login extends Component {
 								/>
 								<label htmlFor="email">Email</label>
 							</div>
+							<div>{this.state.errors.email}</div>
 							<div className="input-field col s12">
 								<input
 									onChange={this.onChange}
@@ -81,6 +83,7 @@ class Login extends Component {
 								/>
 								<label htmlFor="password">Password</label>
 							</div>
+							<div> {this.state.errors.password}</div>
 							<div className="col s12" style={{ paddingLeft: '11.250px' }}>
 								<button
 									style={{

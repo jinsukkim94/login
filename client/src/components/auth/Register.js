@@ -38,6 +38,7 @@ class Register extends Component {
 				// this.props.history.push('/login');
 			})
 			.catch(error => {
+				console.log(error);
 				this.setState({
 					errors: error,
 				});
@@ -72,6 +73,7 @@ class Register extends Component {
 								/>
 								<label htmlFor="email">Email</label>
 							</div>
+							<div>{this.state.errors.email}</div>
 							<div className="input-field col s12">
 								<input
 									onChange={this.onChange}
@@ -82,6 +84,7 @@ class Register extends Component {
 								/>
 								<label htmlFor="password">Password (Between 4 - 30 Characters)</label>
 							</div>
+							<div>{this.state.errors.password}</div>
 							<div className="input-field col s12">
 								<input
 									onChange={this.onChange}
@@ -92,6 +95,7 @@ class Register extends Component {
 								/>
 								<label htmlFor="password2">Confirm Password</label>
 							</div>
+							<div>{this.state.errors.password2}</div>
 							<div className="col s12" style={{ paddingLeft: '11.250px' }}>
 								<button
 									style={{
