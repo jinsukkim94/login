@@ -21,7 +21,7 @@ class Register extends Component {
 		e.preventDefault();
 
 		axios
-			.post('http://localhost:5000/api/users/register', {
+			.post('https://jinsuk-login.herokuapp.com/api/users/register', {
 				email: this.state.email,
 				password: this.state.password,
 				password2: this.state.password2,

@@ -18,7 +18,7 @@ class Login extends Component {
 		e.preventDefault();
 
 		axios
-			.post('http://localhost:5000/api/users/login', {
+			.post('https://jinsuk-login.herokuapp.com/api/users/login', {
 				email: this.state.email,
 				password: this.state.password,
 			})
