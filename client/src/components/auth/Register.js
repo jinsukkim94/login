@@ -39,10 +39,8 @@ class Register extends Component {
 			})
 			.catch(error => {
 				console.log('1 ' + Object.keys(error.response));
-				console.log('2 ' + Object.keys(error.request));
-				console.log('3 ' + Object.keys(error.config));
 				this.setState({
-					errors: error,
+					errors: error.repsonse.data,
 				});
 			});
 	};
