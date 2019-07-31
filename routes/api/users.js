@@ -79,8 +79,9 @@ router.post('/login', (req, res) => {
 					(err, token) => {
 						res.json({
 							success: true,
-							token: token,
+							token: "Bearer" + token,
 						});
+						console.log(" try this " + res.success);
 					}
 				);
 			} else {

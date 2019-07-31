@@ -27,12 +27,15 @@ class Login extends Component {
 			})
 			.then(resp => {
 				console.log(resp);
+				this.props.history.push({
+					pathname: '/loggedin',
+					response: this.state.email
+				});
 				this.setState({
 					email: '',
 					password: '',
 					errors: {},
 				});
-				this.props.history.push('/loggedin');
 			})
 			.catch(error => {
 				console.log(error);
