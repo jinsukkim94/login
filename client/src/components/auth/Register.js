@@ -8,11 +8,8 @@ class Register extends Component {
 			email: '',
 			password: '',
 			password2: '',
-			errors: {
-				email: '',
-				password: '',
-				password2: '',
-			},
+			errors: {},
+			text: '',
 		};
 	}
 
@@ -41,7 +38,9 @@ class Register extends Component {
 				this.props.history.push('/login');
 			})
 			.catch(error => {
-				console.log(error.response);
+				this.setState({
+					errors: error,
+				});
 			});
 	};
 
@@ -108,6 +107,9 @@ class Register extends Component {
 								</button>
 							</div>
 						</form>
+						<div className="col s12" style={{ paddingLeft: '11.250px', paddingTop: '30px' }}>
+							{this.state.text}
+						</div>
 					</div>
 				</div>
 			</div>
