@@ -9,7 +9,7 @@
 		"client-install": "npm install --prefix client",
 		"client": "npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"start": "node node.js",
+		"start": "node server.js",
 		"prod": "NODE_ENV=production node server.js"
 	},
 	"author": "jinsuk kim",
