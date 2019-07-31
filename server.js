@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 
 // DB Config
 const db = require('./config/Keys').mongoURI;
-app.use(express.static(__dirname + '/'));
 
 // ... other app.use middleware
 app.use(express.static(path.join(__dirname, 'client', 'build')));
