@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 class Login extends Component {
 	constructor() {
 		super();
@@ -18,7 +20,15 @@ class Login extends Component {
 			email: this.state.email,
 			password: this.state.password,
 		};
-		console.log(userData);
+
+		axios
+			.get('http://localhost:5000/api/users/register?email=abc@abc.com')
+			.then(resp => {
+				console.log(resp);
+			})
+			.catch(error => {
+				console.log(error);
+			});
 	};
 	render() {
 		const { errors } = this.state;

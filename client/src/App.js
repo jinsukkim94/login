@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Navbar from './components/layout/Navbar';
-import Landing from './components/layout/Landing';
+import Main from './components/layout/Main';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 
@@ -13,7 +12,7 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="App">
-					<Route exact path="/" component={Landing} />
+					<Route exact path="/" component={Main} />
 					<Route exact path="/register" component={Register} />
 					<Route exact path="/login" component={Login} />
 				</div>

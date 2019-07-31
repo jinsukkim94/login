@@ -1,7 +1,11 @@
 const Validator = require('validator');
 const isEmpty = require('is-empty');
-module.exports = function validateRegisterInput(data) {
+module.exports = function validateRegisterInput(body) {
 	let errors = {};
+
+	// console.log(body[0]);
+	var data = body;
+	console.log(data);
 	// Convert empty fields to an empty string so we can use validator functions
 	data.email = !isEmpty(data.email) ? data.email : '';
 	data.password = !isEmpty(data.password) ? data.password : '';

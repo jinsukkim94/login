@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 class Register extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			email: '',
 			password: '',
@@ -10,18 +11,28 @@ class Register extends Component {
 			errors: {},
 		};
 	}
+
 	onChange = e => {
 		this.setState({ [e.target.id]: e.target.value });
 	};
+
 	onSubmit = e => {
 		e.preventDefault();
-		const newUser = {
-			email: this.state.email,
-			password: this.state.password,
-			password2: this.state.password2,
-		};
-		console.log(newUser);
+
+		axios
+			.post('http://localhost:5000/api/users/register', {
+				email: this.state.email,
+				password: this.state.password,
+				password2: this.state.password2,
+			})
+			.then(response => {
+				console.log(response);
+			})
+			.catch(error => {
+				console.log(error.response);
+			});
 	};
+
 	render() {
 		const { errors } = this.state;
 		return (
