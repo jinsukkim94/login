@@ -20,7 +20,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
-	"proxy": "https://jinsuk-login.herokuapp.com/",
+	"proxy": "https://jinsuk-login.herokuapp.com",
 	"eslintConfig": {
 		"extends": "react-app"
 	},
