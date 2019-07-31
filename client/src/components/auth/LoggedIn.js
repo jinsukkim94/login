@@ -18,7 +18,7 @@ export default class LoggedIn extends Component {
 			<div className="container">
 				<div style={{ marginTop: '4rem' }} className="row">
 					<div className="col s8 offset-s2">
-						<div>Hello, {this.props.location.state}!</div>
+						<div>Hello, {this.props.location.response}!</div>
 						<button
 							style={{
 								width: '150px',
