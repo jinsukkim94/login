@@ -78,7 +78,7 @@ class Register extends Component {
 									id="password"
 									type="password"
 								/>
-								<label htmlFor="password">Password</label>
+								<label htmlFor="password">Password (Between 4 - 30 Characters)</label>
 							</div>
 							<div className="input-field col s12">
 								<input
