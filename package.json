@@ -10,8 +10,7 @@
 		"client": "npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"start": "node node.js",
-		"prod": "NODE_ENV=production node server.js",
-		"postinstall": "webpack -p"
+		"prod": "NODE_ENV=production node server.js"
 	},
 	"author": "jinsuk kim",
 	"license": "ISC",
