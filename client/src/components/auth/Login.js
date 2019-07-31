@@ -38,7 +38,7 @@ class Login extends Component {
 				});
 			})
 			.catch(error => {
-				console.log(typeof error);
+				console.log(Object.keys(error));
 				this.setState({
 					errors: error,
 				});
