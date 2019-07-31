@@ -9,6 +9,7 @@ class Register extends Component {
 			password: '',
 			password2: '',
 			errors: {},
+			text: '',
 		};
 	}
 
@@ -26,7 +27,15 @@ class Register extends Component {
 				password2: this.state.password2,
 			})
 			.then(response => {
+				this.setState({
+					email: '',
+					password: '',
+					password2: '',
+					errors: {},
+					text: 'Successfully registered as ' + response.data.email + '!!',
+				});
 				console.log(response);
+				this.props.history.push('/login');
 			})
 			.catch(error => {
 				console.log(error.response);
@@ -96,6 +105,9 @@ class Register extends Component {
 								</button>
 							</div>
 						</form>
+						<div className="col s12" style={{ paddingLeft: '11.250px', paddingTop: '30px' }}>
+							{this.state.text}
+						</div>
 					</div>
 				</div>
 			</div>

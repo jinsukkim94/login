@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Login extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			email: '',
 			password: '',
@@ -16,15 +16,20 @@ class Login extends Component {
 	};
 	onSubmit = e => {
 		e.preventDefault();
-		const userData = {
-			email: this.state.email,
-			password: this.state.password,
-		};
 
 		axios
-			.get('http://localhost:5000/api/users/register?email=abc@abc.com')
+			.post('http://localhost:5000/api/users/login', {
+				email: this.state.email,
+				password: this.state.password,
+			})
 			.then(resp => {
 				console.log(resp);
+				this.setState({
+					email: '',
+					password: '',
+					errors: {},
+				});
+				this.props.history.push('/loggedin');
 			})
 			.catch(error => {
 				console.log(error);
