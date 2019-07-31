@@ -29,7 +29,7 @@ class Login extends Component {
 				console.log(resp);
 				this.props.history.push({
 					pathname: '/loggedin',
-					response: {email: this.state.email},
+					state: {email: this.state.email},
 				});
 				this.setState({
 					email: '',
