@@ -34,12 +34,13 @@ class Login extends Component {
 				this.setState({
 					email: '',
 					password: '',
-					errors: {},
+					errors: {
+						email: '',
+						password: '',
+					},
 				});
 			})
 			.catch(error => {
-				console.log('1 ' + JSON.stringify(error.response));
-				console.log('2 ' + typeof error.response.data);
 				this.setState({
 					errors: error.response.data,
 				});

@@ -8,7 +8,11 @@ class Register extends Component {
 			email: '',
 			password: '',
 			password2: '',
-			errors: {},
+			errors: {
+				email: '',
+				password: '',
+				password2: '',
+			},
 			text: '',
 		};
 	}
@@ -31,14 +35,15 @@ class Register extends Component {
 					email: '',
 					password: '',
 					password2: '',
-					errors: {},
+					errors: {
+						email: '',
+						password: '',
+						password2: '',
+					},
 					text: 'Successfully registered as ' + response.data.email + '!!',
 				});
-				console.log(response);
-				// this.props.history.push('/login');
 			})
 			.catch(error => {
-				console.log('1 ' + Object.keys(error.response));
 				this.setState({
 					errors: error.repsonse.data,
 				});
