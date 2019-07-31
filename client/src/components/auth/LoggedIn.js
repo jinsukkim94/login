@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export default class LoggedIn extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: '',
-		};
-	}
-
 	logOut() {
-		// this.props.history.push('/');
+		this.props.history.push('/');
 	}
 
 	render() {
@@ -17,7 +11,7 @@ export default class LoggedIn extends Component {
 			<div className="container">
 				<div style={{ marginTop: '4rem' }} className="row">
 					<div className="col s8 offset-s2">
-						<div> Hello, {this.state.email} !</div>
+						<div> Hello!</div>
 						<button
 							style={{
 								width: '150px',
@@ -26,7 +20,9 @@ export default class LoggedIn extends Component {
 								marginTop: '1rem',
 							}}
 							className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-							onClick={this.logOut()}
+							onClick={() => {
+								this.logOut();
+							}}
 						>
 							Logout
 						</button>
