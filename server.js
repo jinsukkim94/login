@@ -35,7 +35,7 @@ mongoose
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
-require('./config/passport')(passport);
+require('./config/Passport')(passport);
 // Routes
 app.use('/api/users', users);
 
