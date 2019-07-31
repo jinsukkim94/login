@@ -8,11 +8,7 @@ export default class LoggedIn extends Component {
 			username: ''
 		}
 	}
-	fetchCurr() {
-		this.fetchUser().then((res) => {
-			return <div> Hello, {this.state.username}!</div>
-		})
-	}
+
 	logOut() {
 		this.props.history.push('/');
 	}
@@ -22,7 +18,7 @@ export default class LoggedIn extends Component {
 			<div className="container">
 				<div style={{ marginTop: '4rem' }} className="row">
 					<div className="col s8 offset-s2">
-						{this.fetchCurr()}
+						<div>Hello!</div>
 						<button
 							style={{
 								width: '150px',
