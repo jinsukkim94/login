@@ -38,9 +38,9 @@ class Register extends Component {
 				// this.props.history.push('/login');
 			})
 			.catch(error => {
-				console.log(error.json);
+				console.log(typeof JSON.parse(error));
 				this.setState({
-					errors: error.json,
+					errors: error,
 				});
 			});
 	};
