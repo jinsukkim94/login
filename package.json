@@ -5,11 +5,13 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node server.js",
 		"server": "nodemon server.js",
 		"client-install": "npm install --prefix client",
 		"client": "npm start --prefix client",
-		"dev": "concurrently \"npm run server\" \"npm run client\""
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+		"prod": "NODE_ENV=production node server.js",
+		"postinstall": "webpack -p"
 	},
 	"author": "jinsuk kim",
 	"license": "ISC",
@@ -24,6 +26,15 @@
 		"nodemon": "^1.19.1",
 		"passport": "^0.4.0",
 		"passport-jwt": "^4.0.0",
-		"validator": "^11.1.0"
+		"validator": "^11.1.0",
+		"babel-core": "^6.2.1",
+		"babel-loader": "^6.2.0",
+		"babel-preset-es2015": "^6.1.18",
+		"babel-preset-react": "^6.1.18",
+		"jquery": "^2.2.1",
+		"jsdom": "^8.1.0",
+		"react-addons-test-utils": "^0.14.7",
+		"webpack": "^1.12.9",
+		"webpack-dev-server": "^1.14.0"
 	}
 }
