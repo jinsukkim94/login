@@ -8,8 +8,11 @@ class Register extends Component {
 			email: '',
 			password: '',
 			password2: '',
-			errors: {},
-			text: '',
+			errors: {
+				email: '',
+				password: '',
+				password2: '',
+			},
 		};
 	}
 
@@ -105,9 +108,6 @@ class Register extends Component {
 								</button>
 							</div>
 						</form>
-						<div className="col s12" style={{ paddingLeft: '11.250px', paddingTop: '30px' }}>
-							{this.state.text}
-						</div>
 					</div>
 				</div>
 			</div>

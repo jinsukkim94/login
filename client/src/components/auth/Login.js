@@ -8,7 +8,10 @@ class Login extends Component {
 		this.state = {
 			email: '',
 			password: '',
-			errors: {},
+			errors: {
+				email: '',
+				password: '',
+			},
 		};
 	}
 	onChange = e => {
@@ -16,7 +19,7 @@ class Login extends Component {
 	};
 	onSubmit = e => {
 		e.preventDefault();
-
+		
 		axios
 			.post('https://jinsuk-login.herokuapp.com/api/users/login', {
 				email: this.state.email,
@@ -29,7 +32,7 @@ class Login extends Component {
 					password: '',
 					errors: {},
 				});
-				this.props.history.push('/loggedin');
+				this.props.history.push('/loggedin/' + resp.email);
 			})
 			.catch(error => {
 				console.log(error);
