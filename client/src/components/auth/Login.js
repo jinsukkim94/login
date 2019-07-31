@@ -38,7 +38,9 @@ class Login extends Component {
 				});
 			})
 			.catch(error => {
-				console.log(Object.keys(error));
+				console.log('1 ' + JSON.stringify(error.response));
+				//console.log('2 ' + Object.keys(error.request));
+				console.log('3 ' + JSON.stringify(error.config));
 				this.setState({
 					errors: error,
 				});
