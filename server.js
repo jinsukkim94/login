@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const passport = require('passport');
 const users = require('./routes/api/users');
+const path = require('path');
+
 // Bodyparser middleware
 app.use(
 	bodyParser.urlencoded({
@@ -16,6 +18,14 @@ app.use(bodyParser.json());
 // DB Config
 const db = require('./config/Keys').mongoURI;
 app.use(express.static(__dirname + '/'));
+
+// ... other app.use middleware
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+// Right before your app.listen(), add this:
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 // Connect to MongoDB
 mongoose
