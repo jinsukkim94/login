@@ -35,7 +35,7 @@ class Register extends Component {
 					text: 'Successfully registered as ' + response.data.email + '!!',
 				});
 				console.log(response);
-				this.props.history.push('/login');
+				// this.props.history.push('/login');
 			})
 			.catch(error => {
 				this.setState({
