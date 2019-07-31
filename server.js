@@ -21,11 +21,6 @@ const db = require('./config/Keys').mongoURI;
 // ... other app.use middleware
 app.use('/', express.static(path.join(__dirname, './client/build')));
 
-// Right before your app.listen(), add this:
-app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
-
 // Connect to MongoDB
 mongoose
 	.connect(db, { useNewUrlParser: true })
@@ -39,6 +34,9 @@ require('./config/Passport')(passport);
 // Routes
 app.use('/api/users', users);
 
-const port = 8080 || process.env.PORT; // process.env.port is Heroku's port if you choose to deploy the app there
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
+const port = 5000 || process.env.PORT; // process.env.port is Heroku's port if you choose to deploy the app there
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
